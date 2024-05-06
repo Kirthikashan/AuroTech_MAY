@@ -1,1 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Website</title>
+    <style>
+     
+      img{
+          width:700px;
+          margin-left:310px;
+      }
+      body{
+        background-image: url(https://png.pngtree.com/background/20210711/original/pngtree-colorful-gradient-light-rose-texture-background-picture-image_1091305.jpg);
+        background-size: cover;
+      }
+    .topnav 
+      {
+      background-color: black;
+      overflow: hidden;
+}
+.topnav a 
+{
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 40px;
+  text-decoration: none;
+  font-size: 25px;
+}
+.topnav a:hover {
+  background-color: white;
+  color: black;
+}
+
+.topnav a.active 
+{
+  background-color: green;
+  color: white;
+  margin-left: 40px;
+}
+.photo{
+  margin-bottom:0px;
+  margin-left:500px;
+}
+.admin{
+  margin-left:520px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: x-large;
+  color:blue;
+  margin-bottom:2px;
+ }
+ .detail{
+   font-size: medium;
+   font-family: 'Times New Roman', Times, serif;
+   color: green;
+   margin-left:200px;
+   margin-top:1px;
+ }
+ .photo{
+   margin-top:3px;
+  }
+  .fun{
+    margin-left:330px;
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+    word-spacing: 15px;
+    color:orangered;
+    margin-top:3px;
+  }
+</style>
+</head>
+<body>
+  <img src="https://tagore-engg.ac.in/images/tagore-eng-logo.png">
+  <div class="topnav">
+    <a class="active" href="#home">Home</a>
+    <a href="#Placement">Placements</a>
+    <a href="#contact us">Contact us</a>
+    <a href="#admission">Admission</a>
+    <a href="#excellence">Excellence</a>
+    <a href="#Extra curricular">Extra Curricular</a>
+    <a href="#about">About</a>
+  </div>
+  <b><pre class="admin"> 
+    ADMISSION OPEN
+              2023-2024
+      
+  </pre></b>
+  <pre class="detail"><b>         
+    Welcome to Tagore Engineering College. Ours is a community centered on our students success, providing them with exceptional 
+    experiences, and connections to successful careers.. A diverse graduate student body benefits from classroom and other intellectual 
+    opportunities in robust programs Together our faculty, graduate studentsand undergraduate concentrators comprise a vibrant 
+    community of Engineering scholars at Tagore Engineering College.
+    
+    The College has a mission to build resources and sustain a high quality teaching – learning environment, to provide 
+    state-of-the-art facilities to the faculty and students and to integrate character, ethical and moral values into human resources. 
+    The policies implemented by the Management provide ample opportunities to the students and the staff to achieve excellence in academic and 
+    related areas. All the Departments have adequate infrastructural facilities and dedicated staff.
+  </pre></b>
+ <img class="photo">
+    <img src="https://cache.careers360.mobi/media/presets/720X480/colleges/social-media/media-gallery/2030/2022/10/13/Campus%20View%20of%20Tagore%20Engineering%20College%20Chennai_Campus-View.png">
+    <pre class="fun">TAGORE ENGINEERING COLLEGE CAMPUS RATHINAMANGALAM, CHENNAI</pre>
+  </body>
+</html>
 
