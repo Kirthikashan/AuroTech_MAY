@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            background-image: url('https://e1.pxfuel.com/desktop-wallpaper/286/387/desktop-wallpaper-professional-business-backgrounds-posted-by-michelle-mercado-online-business.jpg');
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+        }
+        .todo-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            max-width: 80%;
+        }
+        .todo-container h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+        .todo-input {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .todo-input input[type="text"] {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .todo-input button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4caf50;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .todo-input button:hover {
+            background-color: #45a049;
+        }
+        .todo-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .todo-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            background-color: #fafafa;
+            transition: background-color 0.3s ease;
+        }
+        .todo-item:hover {
+            background-color: #f0f0f0;
+        }
+        .task-text {
+            flex-grow: 1;
+            margin-right: 10px;
+            color: #333;
+        }
+        .btn-delete {
+            padding: 8px 16px;
+            border: none;
+            background-color: #f44336;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-delete:hover {
+            background-color: #d32f2f;
+        }
+        .task-completed .task-text {
+            text-decoration: line-through;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="todo-container">
+        <h2>To-Do List</h2>
+        <div class="todo-input">
+            <input type="text" id="taskInput" placeholder="Add new task...">
+            <button onclick="addTask()">Add Task</button>
+        </div>
+        <ul class="todo-list" id="taskList"></ul>
+    </div>
+
+    <script>
+        // Array to hold tasks
+        let tasks = [];
+
+        // Function to render tasks
+        function renderTasks() {
+            const taskList = document.getElementById("taskList");
+            taskList.innerHTML = "";
+            tasks.forEach((task, index) => {
+                const taskItem = document.createElement("li");
+                taskItem.classList.add("todo-item");
+                if (task.completed) {
+                    taskItem.classList.add("task-completed");
+                }
+                taskItem.innerHTML = `
+                    <span class="task-text">${task.text}</span>
+                    <button class="btn-delete" onclick="deleteTask(${index})">Delete</button>
+                    <input type="checkbox" onchange="toggleCompletion(${index})" ${task.completed ? 'checked' : ''}>
+                `;
+                taskList.appendChild(taskItem);
+            });
+        }
+
+        // Function to add a new task
+        function addTask() {
+            const taskInput = document.getElementById("taskInput");
+            const taskText = taskInput.value.trim();
+            if (taskText !== "") {
+                tasks.push({ text: taskText, completed: false });
+                taskInput.value = "";
+                renderTasks();
+            }
+        }
+
+        // Function to toggle task completion
+        function toggleCompletion(index) {
+            tasks[index].completed = !tasks[index].completed;
+            renderTasks();
+        }
+
+        // Function to delete a task
+        function deleteTask(index) {
+            tasks.splice(index, 1);
+            renderTasks();
+        }
+
+        // Initial render
+        renderTasks();
+    </script>
+</body>
+</html>
